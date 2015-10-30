@@ -1,38 +1,29 @@
 body {
-	background: $blueLayout;
+	background: $mainBackground;
+	overflow-x:hidden; 
 }
 
 .container {
-	max-width: 960px;
+	width: 100%;
 	margin: 0 auto;
 }
 
-
-.main-head {
-	height: 300px;
+.content {
+	
 }
 
-
-
-.content {
+.work{
 	box-sizing: border-box;
-	background: #fff;
-	width: 100%;
-	padding: 0 20px 20px 20px;
+	padding: 150px 20px 20px 20px;
 	@include clearfix();
-	
-	article {
-		box-sizing: border-box;
-		margin: 20px 20px 0 0;
-		padding: 20px;
-		height: 300px;
-		background: red;
-		float: left;
-	}
+	position: relative;
+	top: -130px;
+	background: $aboutblue;
 
-	article:nth-child(2n+2) {
-		background: yellow;
-		margin-right: 0;
+	.work-container {
+		margin: 0 auto 0;
+		@include clearfix();
+		max-width: 960px;
 	}
 }
 
@@ -43,6 +34,14 @@ body {
 	&.last {
 		width: 65%;
 	}
+
+	@media screen and (max-width: 600px){
+		width: 100%;
+
+		&.last {
+			width: 100%;
+		}
+	}
 }
 
 .short {
@@ -50,6 +49,14 @@ body {
 
 	&.last {
 		width: 35%;
+	}
+
+	@media screen and (max-width: 600px){
+		width: 100%;
+
+		&.last {
+			width: 100%;
+		}
 	}
 }
 
@@ -59,4 +66,23 @@ body {
 	&:last-child, &.last {
 		width: 50%;
 	}
+
+	@media screen and (max-width: 600px){
+		width: 100%;
+
+		&:last-child, &.last {
+			width: 100%;
+		}
+	}
+}
+
+.triangle {
+  width: 100%;
+  position: relative;
+  z-index: 4;
+  margin-bottom: -4px;
+
+  &.down {
+  	margin-top: 0;
+  }
 }

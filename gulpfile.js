@@ -9,7 +9,8 @@ var gulp    = require('gulp'),
     connect = require('gulp-connect'),
     minifyHtml = require('gulp-minify-html'),
     notify = require('gulp-notify'),
-    minifyCss = require('gulp-minify-css');
+    minifyCss = require('gulp-minify-css'),
+    autoprefixer = require('gulp-autoprefixer');
 
 
 var paths = {
@@ -55,6 +56,10 @@ gulp.task('sass', function() {
     return gulp.src(paths.sass).on('error', errorHandler)
         .pipe(sourcemaps.init())
         .pipe(sass()).on('error', errorHandler)
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(sourcemaps.write())
         .pipe(minifyCss())
         .pipe(gulp.dest('build/css'))

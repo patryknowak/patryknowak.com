@@ -1,0 +1,154 @@
+h1, h2 {
+  z-index: 2;
+}
+
+.wip {
+  display: block;
+  position: fixed;
+  background: tomato;
+  color: #fff;
+  padding: 10px;
+  top: 15px;
+  left: 15px;
+  z-index: 200;
+
+}
+
+.main-head {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  background: url('../img/mainb.jpg');
+  background-size: cover;
+}
+
+.titles {
+  position: relative;
+  top: calc(50% - 200px);
+  z-index: 2;
+
+  .logo {
+    height: 100px;
+  }
+}
+
+
+.bluefish {
+	height: 30px;
+	position: absolute;
+	top: 50%;
+	left: -10%;
+  z-index: 3;
+
+	animation-duration: 10s;
+  	animation-name: swim;
+  	animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+@keyframes swim {
+  0% {
+    left: -10%;
+  }
+
+  20% {
+  	left: 30%;
+  	top: 25%;
+  	transform: rotate(25deg);
+  }
+
+  40% {
+  	left: 60%;
+  	top: 55%;
+  	transform: rotate(20deg) scale(1.2);
+  }
+
+
+  80% {
+  	left: 80%;
+  	top: 45%;
+
+    transform: rotate(-20deg) scale(1.2);
+  }
+
+  100% {
+    left: 110%;
+    top: 60%;
+    transform: scale(0.6);
+  }
+}
+
+.fishes, .fishes3 {
+	position: absolute;
+  left: 20%;
+  top: 30%;
+  height: 250px;
+  opacity: 0.2;
+  z-index: 1;
+
+  animation-duration: 7s;
+  animation-name: swim-fish;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.fishes3 {
+  animation-duration: 30s;
+  animation-name: swim-fish3;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  opacity: 0.3;
+}
+
+@keyframes swim-fish {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8) translate(130px, 210px);
+  }
+}
+
+@keyframes swim-fish3 {
+  0% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(0.7) translate(120px, -110px);
+  }
+}
+
+.fishes2 {
+  position: absolute;
+  left: -40%;
+  top: 0;
+  height: 300px;
+  opacity: 0.4;
+  z-index: 1;
+
+  animation-duration: 20s;
+  animation-name: swim-fish2;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes swim-fish2 {
+  0% {
+    left: -30%;
+    top: 0;
+    transform: scale(1);
+    opacity:0.4;
+  }
+
+  100% {
+    top: -30%;
+    left: 120%;
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
